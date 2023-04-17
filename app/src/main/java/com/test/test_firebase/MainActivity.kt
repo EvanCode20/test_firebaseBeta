@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
         val btnSignUp = findViewById<Button>(R.id.btnSignUp)
 
 
-
+        //this is a comment that will go in testpr branch
 
 
         auth = Firebase.auth
