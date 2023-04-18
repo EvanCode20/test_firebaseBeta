@@ -1,11 +1,11 @@
 package com.test.test_firebase
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -25,13 +25,13 @@ class MainActivity : AppCompatActivity() {
         val pwPassword = findViewById<EditText>(R.id.etPassword)
         val btnSignUp = findViewById<Button>(R.id.btnSignUp)
 
-
+        val btnPref = findViewById<Button>(R.id.btnPref)
         //this is a comment that will go in testpr branch
 
 
         auth = Firebase.auth
 
-        btnSignUp.setOnClickListener {
+        btnSignUp.setOnClickListener{
             val inputUsername = txtUsername.text.toString()
             val inputPassword = pwPassword.text.toString()
             auth.createUserWithEmailAndPassword(inputUsername, inputPassword)
@@ -49,7 +49,10 @@ class MainActivity : AppCompatActivity() {
 
         }
 
-
+        btnPref.setOnClickListener{
+            val intent = Intent(this, PreferencesActivity::class.java)
+            startActivity(intent)
+        }
 
 
 
